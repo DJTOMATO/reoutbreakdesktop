@@ -1,0 +1,54 @@
+{
+  "name": "reoutbreakdesktop",
+  "productName": "Outbreak Web",
+  "version": "1.0.0",
+  "description": "Desktop client for Resident Evil Outbreak (outbreakweb.com)",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DJTOMATO/reoutbreakdesktop.git"
+  },
+  "homepage": "https://github.com/DJTOMATO/reoutbreakdesktop#readme",
+  "bugs": {
+    "url": "https://github.com/DJTOMATO/reoutbreakdesktop/issues"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "keywords": [
+    "electron",
+    "outbreak",
+    "resident-evil-outbreak",
+    "ps2",
+    "webgpu"
+  ],
+  "author": "Glas",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "electron": "^45.0.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.glas.outbreakweb",
+    "productName": "Outbreak Web",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Outbreak Web"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "icon.ico",
+      "icon.png"
+    ]
+  }
+}

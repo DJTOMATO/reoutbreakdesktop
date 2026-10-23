@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Resident Evil Outbreak — Outbreak·Web</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090707;
+      --line: #2a2222;
+      --line-2: #3d3333;
+      --text: #e2dcd3;
+      --muted: #9a938b;
+      --faint: #6f6861;
+      --accent: #b8231f;
+      --accent-2: #8e1b1a;
+      --gold: #c9a46a;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      background: radial-gradient(ellipse at 50% -10%, #2a0c0c 0%, #0d0a0a 45%, var(--bg) 100%) fixed var(--bg);
+      color: var(--text);
+      font: 15px/1.55 var(--sans);
+      overflow: hidden;
+      user-select: none;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      gap: 20px;
+    }
+
+    .brand {
+      font: 600 16px/1 var(--serif);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .brand b {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0;
+      font: 600 clamp(30px, 5vw, 52px)/1.05 var(--serif);
+      letter-spacing: 0.1em;
+      color: #ece6dd;
+      text-transform: uppercase;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.5em;
+      letter-spacing: 0.36em;
+      color: var(--accent);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: 0.06em;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+
+    .dot.err {
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: none;
+    }
+
+    @keyframes pulse {
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    button {
+      margin-top: 8px;
+      padding: 11px 26px;
+      font: 600 14px var(--sans);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent-2);
+      border: 1px solid #c4302c;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a32320;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="brand">Outbreak<b>·</b>Web</div>
+  <h1>Resident Evil <span>Outbreak</span></h1>
+  <div class="status">
+    <span class="dot" id="dot"></span>
+    <span id="msg">Connecting to server…</span>
+  </div>
+  <button type="button" id="retry" hidden>Retry Connection</button>
+
+  <script>
+    const TARGET_URL = 'https://outbreakweb.com/';
+    const params = new URLSearchParams(window.location.search);
+    const isError = params.get('error') === '1';
+    const dot = document.getElementById('dot');
+    const msg = document.getElementById('msg');
+    const retryBtn = document.getElementById('retry');
+
+    function connect() {
+      dot.className = 'dot';
+      msg.textContent = 'Connecting to Outbreak·Web…';
+      retryBtn.hidden = true;
+      if (window.electronAPI && window.electronAPI.loadSite) {
+        window.electronAPI.loadSite(TARGET_URL);
+      } else {
+        window.location.href = TARGET_URL;
+      }
+    }
+
+    retryBtn.addEventListener('click', connect);
+
+    if (isError) {
+      dot.className = 'dot err';
+      msg.textContent = 'Could not reach outbreakweb.com. Check your internet connection.';
+      retryBtn.hidden = false;
+    } else {
+      connect();
+    }
+  </script>
+</body>
+
+</html>
