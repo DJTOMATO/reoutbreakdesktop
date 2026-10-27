@@ -12,7 +12,8 @@
 <p align="center">
   <a href="https://github.com/DJTOMATO/reoutbreakdesktop/releases"><b>Descargar Instalador (Releases)</b></a> ·
   <a href="https://outbreakweb.com/">Sitio Web</a> ·
-  <a href="https://github.com/DJTOMATO/reoutbreakdesktop/issues">Reportar un Problema</a>
+  <a href="https://github.com/DJTOMATO/reoutbreakdesktop/issues">Reportar un Problema</a> ·
+  <a href="https://ko-fi.com/lenabot"><b>Donar en Ko-fi</b></a>
 </p>
 
 ---
@@ -84,6 +85,18 @@ Para generar el instalador NSIS de Windows (se guarda en `dist/`):
 ```bash
 npm run build
 ```
+
+## Apoyo y donaciones
+
+Si el cliente te resulta útil y querés colaborar con el desarrollo y mantenimiento del proyecto, podés invitar un café. ¡Cualquier ayuda es más que bienvenida!
+
+<p align="center">
+  <a href="https://ko-fi.com/lenabot">
+    <img src="https://img.shields.io/badge/Ko--fi-Apoyar%20en%20Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Apoyar en Ko-fi">
+  </a>
+</p>
+
+Podés donar directamente en [**ko-fi.com/lenabot**](https://ko-fi.com/lenabot). Mirá [SPONSORS.md](SPONSORS.md) para más información y formas de colaborar.
 
 ## Aviso legal
 
