@@ -21,12 +21,12 @@ Developing, testing, optimizing WebAssembly / WebGPU / Chromium flags, and maint
 You can support the project directly via **Ko-fi**:
 
 <p align="left">
-  <a href="https://ko-fi.com/lenabot">
+  <a href="https://ko-fi.com/djtomato">
     <img src="https://img.shields.io/badge/Ko--fi-Support%20on%20Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Support on Ko-fi">
   </a>
 </p>
 
-👉 **[https://ko-fi.com/lenabot](https://ko-fi.com/lenabot)**
+👉 **[https://ko-fi.com/djtomato](https://ko-fi.com/djtomato)**
 
 ### Other Ways to Support
 
@@ -54,12 +54,12 @@ Desarrollar, testear, optimizar los flags de WebAssembly / WebGPU / Chromium y m
 Podés apoyar el proyecto directamente a través de **Ko-fi**:
 
 <p align="left">
-  <a href="https://ko-fi.com/lenabot">
+  <a href="https://ko-fi.com/djtomato">
     <img src="https://img.shields.io/badge/Ko--fi-Apoyar%20en%20Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Apoyar en Ko-fi">
   </a>
 </p>
 
-👉 **[https://ko-fi.com/lenabot](https://ko-fi.com/lenabot)**
+👉 **[https://ko-fi.com/djtomato](https://ko-fi.com/djtomato)**
 
 ### Otras formas de colaborar
 
